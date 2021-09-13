@@ -6,7 +6,7 @@ http://stackoverflow.com/questions/2693820/extract-images-from-pdf-without-resam
 '''
 
 import sys
-import PyPDF2
+import Py3PDF
 from PIL import Image
 
 if (len(sys.argv) != 2):
