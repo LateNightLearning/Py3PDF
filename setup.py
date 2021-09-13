@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+import setuptools
 from distutils.core import setup
 import re
 
@@ -36,7 +36,7 @@ else:
 setup(
         name="Py3PDF",
         version=verstr,
-        description="PDF toolkit",
+        description="PyPDF2 fork",
         long_description=long_description,
         author="Jacod Shax",
         author_email="igotlocekdout2day@gmail.com",
@@ -50,5 +50,5 @@ setup(
             "Operating System :: OS Independent",
             "Topic :: Software Development :: Libraries :: Python Modules",
             ],
-        packages=["Py3PDF"],
+        packages=["PyPDF2"],
     )

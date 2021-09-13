@@ -1,4 +1,12 @@
-﻿Version 1.26.0, 2016-05-18
+﻿Version 1.26.1, 2021-09-10
+--------------------------
+
+ - Updated project as fork of PyPDF2
+
+ - Refactored PdfWriter.write to not throw errors when using
+   file streams created via. compression module .open calls
+
+Version 1.26.0, 2016-05-18
 --------------------------
 
  - NOTE: Active maintenance on PyPDF2 is resuming after a hiatus
