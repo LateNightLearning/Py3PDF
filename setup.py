@@ -4,6 +4,10 @@ from distutils.core import setup
 import re
 
 long_description = """
+A fork of the popular PyPDF2 library adding support to write
+to compression-based file descriptors (ex. gzip.open). Codebase
+is also being updated to support newer versions of Python 3.
+
 A Pure-Python library built as a PDF toolkit.  It is capable of:
 
 - extracting document information (title, author, ...)
@@ -30,15 +34,13 @@ else:
     raise RuntimeError("Unable to find version string in %s." % (VERSIONFILE))
 
 setup(
-        name="PyPDF2",
+        name="Py3PDF",
         version=verstr,
         description="PDF toolkit",
         long_description=long_description,
-        author="Mathieu Fenniak",
-        author_email="biziqe@mathieu.fenniak.net",
-        maintainer="Phaseit, Inc.",
-        maintainer_email="PyPDF2@phaseit.net",
-        url="http://mstamy2.github.com/PyPDF2",
+        author="Jacod Shax",
+        author_email="igotlocekdout2day@gmail.com",
+        url="https://github.com/LateNightLearning/Py3PDF",
         classifiers = [
             "Development Status :: 5 - Production/Stable",
             "Intended Audience :: Developers",
@@ -48,5 +50,5 @@ setup(
             "Operating System :: OS Independent",
             "Topic :: Software Development :: Libraries :: Python Modules",
             ],
-        packages=["PyPDF2"],
+        packages=["Py3PDF"],
     )
