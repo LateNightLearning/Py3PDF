@@ -449,8 +449,10 @@ class PdfFileWriter(object):
         :param stream: An object to write the file to.  The object must support
             the write method and the tell method, similar to a file object.
         """
-        if hasattr(stream, 'mode') and 'b' not in stream.mode:
-            warnings.warn("File <%s> to write to is not in binary mode. It may not be written to correctly." % stream.name)
+        if hasattr(stream, 'mode'):
+            stream_type = type(stream.mode)
+            if (stream_type == 'str' and 'b' not in stream.mode) or (stream_type == 'int' and stream.mode != 2):
+                warnings.warn("File <%s> to write to is not in binary mode. It may not be written to correctly." % stream.name)
         debug = False
         import struct
 
@@ -572,7 +574,7 @@ class PdfFileWriter(object):
                     self._sweepIndirectReferences(externMap, realdata)
                     return data
             else:
-                if data.pdf.stream.closed:
+                if hasattr(data.pdf, 'stream') and data.pdf.stream.closed:
                     raise ValueError("I/O operation on closed file: {}".format(data.pdf.stream.name))
                 newobj = externMap.get(data.pdf, {}).get(data.generation, {}).get(data.idnum, None)
                 if newobj == None:
